@@ -14,7 +14,6 @@ local current_sub
 
 local function stop_at_the_end(sub)
     pause_timer.set_stop_time(sub['end'] - 0.050)
-    h.notify("Playing till the end of the sub...", "info", 3)
 end
 
 local function play_till_sub_end()
@@ -50,7 +49,6 @@ local function play_till_next_sub_end()
     current_sub = Subtitle:now()
     mp.observe_property("sub-text", "string", check_sub)
     mp.set_property("pause", "no")
-    h.notify("Waiting till next sub...", "info", 10)
 end
 
 return {
